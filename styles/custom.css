@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Passion+One:wght@400&display=swap');
+
+/* Eliminar márgenes y padding por defecto que causan líneas blancas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #211D62;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #211D62;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 1s ease-out;
+    animation: bodyFadeIn 0.8s ease-out forwards;
+    transform: translateZ(0); /* Evita saltos o gaps subpixel */
+    -webkit-font-smoothing: antialiased;
+}
+
+body.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación dramática para el body */
+@keyframes bodyFadeIn {
+    0% {
+        opacity: 0;
+        background-color: #211D62; /* Color del gradiente inicial */
+    }
+    100% {
+        opacity: 1;
+        background-color: #F8F8F8; /* Color final */
+    }
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Animación especial para el hero section */
+.hero-animation {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9);
+    animation: heroEntrance 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+}
+
+@keyframes heroEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.95);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-10px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.hero-animation {
+    animation: heroEntrance 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animación para elementos individuales */
+.stagger-animate > * {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: staggerFadeIn 0.8s ease-out forwards;
+}
+
+.stagger-animate > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animate > *:nth-child(2) { animation-delay: 0.3s; }
+.stagger-animate > *:nth-child(3) { animation-delay: 0.5s; }
+.stagger-animate > *:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes staggerFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mejoras visuales */
+.shadow-custom {
+    box-shadow: 0 10px 30px -5px rgba(33, 29, 98, 0.3);
+}
+
+/* Animaciones suaves */
+.transition {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Efectos hover mejorados */
+.hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Estilos para mejorar la legibilidad */
+.leading-relaxed {
+    line-height: 1.7;
+}
+
+/* Tracking personalizado para Passion One */
+.tracking-wide {
+    letter-spacing: 0.025em;
+}
+
+/* Mejor rendimiento de fuentes */
+.font-smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Asegurar que las secciones no tengan márgenes que causen líneas blancas */
+section {
+    position: relative;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: inherit;
+    z-index: 1;
+}
+
+section + section {
+    margin-top: -1px; /* elimina línea entre secciones */
+}
+
+/* Gradiente con transición suave */
+.gradient-bg {
+    background: linear-gradient(135deg, #211D62 0%, #1A2A80 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2{
+    font-family: 'passion one', cursive;
+}
+
+a, button, .card, .hover-lift {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow;
+}
+
+a:hover, button:hover, .hover-lift:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #211D62 0%, #1A2A80 100%);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
