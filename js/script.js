@@ -87,14 +87,6 @@ function initializeAnimations() {
         });
     }, observerOptions);
 
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        if (!section.classList.contains('fade-in')) {
-            section.classList.add('fade-in');
-            observer.observe(section);
-        }
-    });
-
     // Animación especial para cards y elementos individuales
     const cards = document.querySelectorAll('.card-animate');
     cards.forEach((card, index) => {
@@ -122,22 +114,31 @@ function loadEvent(eventId) {
 
 
 const eventsData = {
-    "feria-cientifica": {
-        title: "Feria Científica",
+    "proyectos-inter": {
+        title: "Proyectos Interdisciplinarios",
         date: "Octubre 2026",
         description: "Evento donde los estudiantes presentan proyectos innovadores.",
         gallery: [
-            { type: "image", src: "img/eventos/feria1.jpg" },
-            { type: "video", src: "videos/feria.mp4" }
+            { type: "image", src: "img/eventos/inter.jpg" },
+            { type: "video", src: "videos/inter.mp4" }
         ]
     },
-    "reinado": {
-        title: "Reinado",
+    "banda": {
+        title: "Nuestra Banda Escolar",
         date: "Octubre 2026",
-        description: "Celebración cultural con participación estudiantil.",
+        description: "Nuestra banda de liras y tambores forma parte de los desfiles patrios de noviembre.",
         gallery: [
-            { type: "image", src: "img/eventos/reinado.jpg" },
-            { type: "video", src: "videos/reinado.mp4" }
+            { type: "image", src: "img/eventos/banda.jpg" },
+            { type: "video", src: "videos/banda.mp4" }
+        ]
+    },
+    "tipico": {
+        title: "Actividades Folclóricas",
+        date: "Octubre 2026",
+        description: "Celebramos nuestra identidad nacional a través de actividades folclóricas con nuestros estudiantes.",
+        gallery: [
+            { type: "image", src: "img/eventos/tipico.jpg" },
+            { type: "video", src: "videos/tipico.mp4" }
         ]
     }
 };

@@ -45,15 +45,15 @@ body.loaded {
 
 .fade-in {
     opacity: 0;
-    transform: translateY(60px);
-    transition: opacity 1s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
+    transform: translateY(40px);
 }
 
 .fade-in-visible {
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
 
 
 /* Animación especial para el hero section */
@@ -189,4 +189,11 @@ a:hover, button:hover, .hover-lift:hover {
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
+}
+
+#eventsCarousel::-webkit-scrollbar {
+    display: none;
+}
+#eventsCarousel {
+    scrollbar-width: none;
 }
