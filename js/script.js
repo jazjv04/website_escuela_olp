@@ -4,6 +4,8 @@ function initializeComponents() {
     initializeSmoothScroll();
     initializeAnimations();
     initializePageLoad();
+    initializeEventDetail();
+
 }
 
 // Animación dramática al cargar la página
@@ -106,3 +108,70 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('loaded');
     initializeComponents();
 });
+
+function loadPage(page) {
+    loadComponent('homePage-container', `pages/${page}`);
+}
+
+let currentEventId = null;
+
+function loadEvent(eventId) {
+    currentEventId = eventId;
+    loadComponent('homePage-container', 'pages/events-details.html');
+}
+
+
+const eventsData = {
+    "feria-cientifica": {
+        title: "Feria Científica",
+        date: "Octubre 2026",
+        description: "Evento donde los estudiantes presentan proyectos innovadores.",
+        gallery: [
+            { type: "image", src: "img/eventos/feria1.jpg" },
+            { type: "video", src: "videos/feria.mp4" }
+        ]
+    },
+    "reinado": {
+        title: "Reinado",
+        date: "Octubre 2026",
+        description: "Celebración cultural con participación estudiantil.",
+        gallery: [
+            { type: "image", src: "img/eventos/reinado.jpg" },
+            { type: "video", src: "videos/reinado.mp4" }
+        ]
+    }
+};
+
+function initializeEventDetail() {
+    if (!currentEventId) return;
+
+    const event = eventsData[currentEventId];
+    if (!event) return;
+
+    const breadcrumb = document.getElementById("breadcrumb-title");
+    const title = document.getElementById("event-title");
+    const date = document.getElementById("event-date");
+    const description = document.getElementById("event-description");
+    const gallery = document.getElementById("event-gallery");
+
+    if (!breadcrumb || !gallery) return;
+
+    breadcrumb.textContent = event.title;
+    title.textContent = event.title;
+    date.textContent = event.date;
+    description.textContent = event.description;
+
+    gallery.innerHTML = "";
+
+    event.gallery.forEach(item => {
+        gallery.innerHTML += item.type === "image"
+            ? `<div class="overflow-hidden rounded-xl shadow">
+                    <img src="${item.src}" class="w-full h-60 object-cover">
+               </div>`
+            : `<div class="overflow-hidden rounded-xl shadow">
+                    <video controls class="w-full h-60 object-cover">
+                        <source src="${item.src}">
+                    </video>
+               </div>`;
+    });
+}
