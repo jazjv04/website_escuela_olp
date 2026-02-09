@@ -1,25 +1,57 @@
-<section class="bg-gradient-to-t from-escuela-azul-oscuro to-escuela-azul-electrico text-white py-40">
+<section class="bg-escuela-azul-oscuro to-escuela-azul-electrico text-white">
 
-    <!-- Título -->
-    <div class="container mx-auto px-12 mb-24">
+    <section class="bg-gradient-to-t from-escuela-azul-oscuro relative bg-escuela-azul-oscuro text-white py-36 overflow-hidden mb-16">
+
+    <!-- Fondo decorativo -->
+    <div class="absolute inset-0 bg-[url('images/portada.jpg')] bg-cover bg-center opacity-20 scale-110"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-escuela-azul-oscuro via-escuela-azul-oscuro/80 to-transparent"></div>
+
+    <!-- Contenido -->
+    <div class="relative container mx-auto px-12">
         <div class="max-w-4xl mx-auto text-center stagger-animate">
-            <h1 class="text-5xl md:text-7xl font-passion mb-6 leading-tight stagger-item">
-                EVENTOS
-            </h1>
-            <p class="text-xl mb-8">
-                En la Escuela Octavio López Pascal, estamos comprometidos con una educación a la vanguardia, donde cada espacio se diseña pensando en las necesidades de nuestros estudiantes.
-            </p>
+        <h1 class="text-6xl md:text-8xl font-passion mb-6 stagger-item">
+            EVENTOS INSTITUCIONALES
+        </h1>
+        <p class="text-xl text-gray-200 stagger-item">
+            Actividades académicas, culturales y reconocimientos que forman parte
+            del desarrollo integral de nuestra comunidad educativa.
+        </p>
         </div>
     </div>
+</section>
 
     <!-- Cards -->
     <div class="container mx-auto px-10 grid gap-10 lg:grid-cols-2">
+            <!-- Card Orden Manuel José Hurtado 2024 -->
+        <div onclick="loadEvent('orden-manuel')"
+             class="cursor-pointer bg-white rounded-2xl shadow-md overflow-hidden
+                    hover:shadow-xl transition-all duration-300">
+
+            <img src="images/eventos/orden.jpg"
+                 alt="Proyectos Interdisciplinarios"
+                 class="h-56 w-full object-cover">
+
+            <div class="p-6">
+                <span class="text-xs text-gray-400 block mb-2">
+                    Diciembre 2024
+                </span>
+
+                <h3 class="font-semibold text-xl text-escuela-azul-oscuro mb-2">
+                    Orden Manuel José Hurtado 2024 - Decreto a Nivel Nacional
+                </h3>
+
+                <p class="text-sm text-gray-600">
+                    Máximo Galardón a la Educación otorgado por el Ministerio de Educación a nuestra institución.
+                </p>
+            </div>
+        </div>
+
         <!-- Card Proyectos Interdisciplinarios -->
         <div onclick="loadEvent('proyectos-inter')"
              class="cursor-pointer bg-white rounded-2xl shadow-md overflow-hidden
                     hover:shadow-xl transition-all duration-300">
 
-            <img src="img/eventos/inter.jpg"
+            <img src="images/eventos/inter.jpg"
                  alt="Proyectos Interdisciplinarios"
                  class="h-56 w-full object-cover">
 
@@ -38,11 +70,59 @@
             </div>
         </div>
 
+        <!-- Card Tipico -->
+        <div onclick="loadEvent('tipico')"
+             class="cursor-pointer bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+
+            <img src="images/eventos/tipico.jpg"
+                 alt="Tipico"
+                 class="h-56 w-full object-cover">
+
+            <div class="p-6">
+                <span class="text-xs text-gray-400 block mb-2">
+                    Octubre 2026
+                </span>
+
+                <h3 class="font-semibold text-xl text-escuela-azul-oscuro mb-2">
+                    Conjunto Folclórico 
+                </h3>
+
+                <p class="text-sm text-gray-600">
+                    Celebramos nuestra identidad nacional a través de actividades folclóricas con nuestros estudiantes.
+                </p>
+            </div>
+        </div>
+
+        
+        <!-- Card Programas Deportivos  -->
+        <div onclick="loadEvent('deportivo')"
+             class="cursor-pointer bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+
+            <img src="images/eventos/deportivo.jpg"
+                 alt="Deportivo"
+                 class="h-56 w-full object-cover">
+
+            <div class="p-6">
+                <span class="text-xs text-gray-400 block mb-2">
+                    Octubre 2026
+                </span>
+
+                <h3 class="font-semibold text-xl text-escuela-azul-oscuro mb-2">
+                    Programas Deportivos                
+                </h3>
+
+                <p class="text-sm text-gray-600">
+                    Nuestros Programas Deportivos son un pilar fundamental en la formación integral de nuestros estudiantes.
+                </p>
+            </div>
+        </div>
+
+        
         <!-- Card Reinado -->
         <div onclick="loadEvent('banda')"
              class="cursor-pointer bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
 
-            <img src="img/eventos/banda.jpg"
+            <img src="images/eventos/banda/banda.jpg"
                  alt="Banda"
                  class="h-56 w-full object-cover">
 
@@ -61,27 +141,5 @@
             </div>
         </div>
 
-        <!-- Card Tipico -->
-        <div onclick="loadEvent('tipico')"
-             class="cursor-pointer bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
-
-            <img src="img/eventos/tipico.jpg"
-                 alt="Tipico"
-                 class="h-56 w-full object-cover">
-
-            <div class="p-6">
-                <span class="text-xs text-gray-400 block mb-2">
-                    Octubre 2026
-                </span>
-
-                <h3 class="font-semibold text-xl text-escuela-azul-oscuro mb-2">
-                    Actividades Folclóricas
-                </h3>
-
-                <p class="text-sm text-gray-600">
-                    Celebramos nuestra identidad nacional a través de actividades folclóricas con nuestros estudiantes.
-                </p>
-            </div>
-        </div>
     </div>
 </section>

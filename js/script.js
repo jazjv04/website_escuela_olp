@@ -5,6 +5,7 @@ function initializeComponents() {
     initializeAnimations();
     initializePageLoad();
     initializeEventDetail();
+    initCarousel();
 
 }
 
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function loadPage(page) {
     loadComponent('homePage-container', `pages/${page}`);
+    window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 let currentEventId = null;
@@ -110,26 +112,34 @@ let currentEventId = null;
 function loadEvent(eventId) {
     currentEventId = eventId;
     loadComponent('homePage-container', 'pages/events-details.html');
+    window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 
 const eventsData = {
+    "orden-manuel": {
+        title: "Orden Manuel José Hurtado 2024 - Decreto a Nivel Nacional",
+        date: "Octubre 2026",
+        description: "🏆 ¡Así se escribe la historia de la excelencia educativa! " +
+        "Con inmenso orgullo, la Escuela Octavio López Pascal fue distinguida en el 2024 con la Orden Manuel José Hurtado, el máximo reconocimiento que otorga el Ministerio de Educación de Panamá a la calidad y la excelencia escolar. Este prestigioso galardón es el fruto del compromiso inquebrantable de toda nuestra comunidad: del esfuerzo diario de nuestros estudiantes, de la dedicación innovadora de nuestros docentes, del apoyo fundamental de las familias y de una gestión centrada en la mejora continua. " +
+        "La Orden Manuel José Hurtado valora nuestro alto rendimiento académico, nuestras prácticas pedagógicas innovadoras, la sana convivencia y la participación de todos los que hacemos posible el milagro de educar. No es solo un premio; es un reconocimiento a un modelo de escuela que funciona, que inspira y que transforma vidas. 📚✨ Este logro nos impulsa a seguir elevando nuestra misión, reafirmando que en la Escuela Octavio López Pascal construimos, día a día, las bases de un futuro lleno de oportunidades y excelencia para nuestras generaciones. 🚀 🇵🇦",
+        gallery: [
+            { type: "image", src: "images/eventos/orden2.jpg" },
+            { type: "image", src: "images/eventos/orden.jpg" },
+            
+        ]
+    },
+
     "proyectos-inter": {
         title: "Proyectos Interdisciplinarios",
         date: "Octubre 2026",
-        description: "Evento donde los estudiantes presentan proyectos innovadores.",
+        description: "🌟 ¡Así se ve la innovación en acción!"+
+        "Proyectos interdisciplinarios donde cada grupo explora, crea y aprende uniendo diferentes áreas del conocimiento."+
+        "Desde ciencias hasta arte, nuestros estudiantes demuestran que cuando se conectan las disciplinas, el aprendizaje cobra vida. 💡📚🔬🎨"+
+        "Una muestra del talento y dedicación de nuestros estudiantes, quienes integran saberes para proponer soluciones creativas y construir un futuro lleno de posibilidades. 🚀 ",
         gallery: [
-            { type: "image", src: "img/eventos/inter.jpg" },
+            { type: "image", src: "images/eventos/inter.jpg" },
             { type: "video", src: "videos/inter.mp4" }
-        ]
-    },
-    "banda": {
-        title: "Nuestra Banda Escolar",
-        date: "Octubre 2026",
-        description: "Nuestra banda de liras y tambores forma parte de los desfiles patrios de noviembre.",
-        gallery: [
-            { type: "image", src: "img/eventos/banda.jpg" },
-            { type: "video", src: "videos/banda.mp4" }
         ]
     },
     "tipico": {
@@ -137,10 +147,36 @@ const eventsData = {
         date: "Octubre 2026",
         description: "Celebramos nuestra identidad nacional a través de actividades folclóricas con nuestros estudiantes.",
         gallery: [
-            { type: "image", src: "img/eventos/tipico.jpg" },
+            { type: "image", src: "images/eventos/tipico.jpg" },
             { type: "video", src: "videos/tipico.mp4" }
         ]
-    }
+    },
+    "deportivo": {
+        title: "Programas Deportivos",
+        date: "Octubre 2026",
+        description: "Nuestros Programas Deportivos son un pilar fundamental en la formación integral de nuestros estudiantes.",
+        gallery: [
+            { type: "image", src: "images/eventos/deportivo.jpg" },
+        ]        
+    },
+    "banda": {
+        title: "Nuestra Banda Escolar",
+        date: "Octubre 2026",
+        description: "🎺 ¡Así el ritmo y la armonía fortalecen nuestro espíritu comunitario!"+
+        "La Banda de la Escuela Octavio López Pascal es mucho más que un conjunto musical; es un proyecto emblemático del Comité Social que teje disciplina, arte y orgullo patrio en cada nota. Aquí, los estudiantes no solo aprenden a tocar un instrumento, sino que cultivan valores de trabajo en equipo, compromiso y expresión cultural."+
+        "Desde los ensayos dedicados hasta las presentaciones que llenan de color nuestros actos cívicos y festivos, la banda es un pilar de identidad y unidad escolar. 🏆 Un esfuerzo que brilló al obtener el Primer Lugar a nivel de centros educativos en los desfiles patrios realizados en el distrito de Boquete, coronando con excelencia el talento y la dedicación de nuestros estudiantes. 🥁🎶 "+
+        "Este proyecto refleja nuestro compromiso con una educación integral, donde la música se convierte en una herramienta para formar ciudadanos responsables, unidos por la melodía del esfuerzo compartido y el amor por nuestra comunidad. ✨ ",
+
+        gallery: [
+            { type: "image", src: "images/eventos/banda/banda.jpg" },
+            { type: "image", src: "images/eventos/banda/banda2.jpg" },
+            { type: "image", src: "images/eventos/banda/banda3.jpg" },
+            { type: "image", src: "images/eventos/banda/banda4.jpg" },
+            { type: "image", src: "images/eventos/banda/banda5.jpg" },
+            { type: "image", src: "images/eventos/banda/banda6.jpg" },
+            { type: "image", src: "images/eventos/banda/banda7.jpg" },
+        ]
+    },
 };
 
 function initializeEventDetail() {
@@ -165,14 +201,72 @@ function initializeEventDetail() {
     gallery.innerHTML = "";
 
     event.gallery.forEach(item => {
-        gallery.innerHTML += item.type === "image"
-            ? `<div class="overflow-hidden rounded-xl shadow">
-                    <img src="${item.src}" class="w-full h-60 object-cover">
-               </div>`
-            : `<div class="overflow-hidden rounded-xl shadow">
-                    <video controls class="w-full h-60 object-cover">
-                        <source src="${item.src}">
-                    </video>
-               </div>`;
-    });
+            gallery.innerHTML += item.type === "image"
+            ? `
+            <div onclick="openLightbox('${item.src}', 'image')" 
+                class="break-inside-avoid cursor-zoom-in group">
+            <img src="${item.src}"
+                class="w-full rounded-xl shadow-lg
+                        transition group-hover:scale-[1.02]">
+            </div>`
+            : `
+            <div onclick="openLightbox('${item.src}', 'video')" 
+                class="break-inside-avoid cursor-pointer">
+            <video muted class="w-full rounded-xl shadow-lg">
+                <source src="${item.src}">
+            </video>
+            </div>`;
+            });
+
+    // Set hero background
+    const heroBg = document.getElementById("event-hero-bg");
+    if (heroBg && event.gallery[0]) {
+    heroBg.style.backgroundImage = `url(${event.gallery[0].src})`;
+    }
+
 }
+
+let currentEvent = 0;
+let track = null;
+let dots = null;
+let totalEvents = 0;
+
+function initCarousel() {
+  track = document.getElementById("eventsTrack");
+  dots = document.querySelectorAll(".dot");
+
+  if (!track || dots.length === 0) return;
+
+  totalEvents = dots.length;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${currentEvent * 100}%)`;
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle("bg-white", index === currentEvent);
+    dot.classList.toggle("bg-white/40", index !== currentEvent);
+  });
+}
+
+function nextEvent() {
+  if (!track) return;
+  currentEvent = (currentEvent + 1) % totalEvents;
+  updateCarousel();
+}
+
+function prevEvent() {
+  if (!track) return;
+  currentEvent = (currentEvent - 1 + totalEvents) % totalEvents;
+  updateCarousel();
+}
+
+function goToEvent(index) {
+  currentEvent = index;
+  updateCarousel();
+}
+
+setInterval(() => {
+  if (track) nextEvent();
+}, 6000);
