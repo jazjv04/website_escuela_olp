@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function loadPage(page) {
-    loadComponent('homePage-container', `/pages/${page}`);
+    loadComponent('homePage-container', `pages/${page}`);
     window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
@@ -111,7 +111,7 @@ let currentEventId = null;
 
 function loadEvent(eventId) {
     currentEventId = eventId;
-    loadComponent('homePage-container', '/pages/events-details.html');
+    loadComponent('homePage-container', 'pages/events-details.html');
     window.scrollTo({ top: 0, behavior: 'instant' });
 }
 

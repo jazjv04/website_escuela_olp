@@ -24,11 +24,13 @@
         </div>
         
         <!-- Menú Móvil -->
-        <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-4 pb-4">
-            <a href="#" onclick="loadPage('homePage.html')">Inicio</a>
-            <a href="#" onclick="loadPage('events.html')">Eventos</a>
-            <a href="#" onclick="loadPage('aboutUs.html')">Sobre Nosotros</a>
-            <a href="#contacto" class="block hover:text-escuela-electrico transition font-medium">Contáctenos</a>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+            <div class="flex flex-row justify-center items-center space-x-6 text-sm">
+                <a href="#" onclick="loadPage('homePage.html')">Inicio</a>
+                <a href="#" onclick="loadPage('events.html')">Eventos</a>
+                <a href="#" onclick="loadPage('aboutUs.html')">Sobre Nosotros</a>
+                <a href="#" onclick="scrollToSection('contacto')">Contáctenos</a>
+            </div>
         </div>
     </nav>
 </header>
