@@ -138,12 +138,26 @@ const eventsData = {
         "Desde ciencias hasta arte, nuestros estudiantes demuestran que cuando se conectan las disciplinas, el aprendizaje cobra vida. 💡📚🔬🎨"+
         "Una muestra del talento y dedicación de nuestros estudiantes, quienes integran saberes para proponer soluciones creativas y construir un futuro lleno de posibilidades. 🚀 ",
         gallery: [
-            { type: "image", src: "images/eventos/inter.jpg" },
-            { type: "video", src: "videos/inter.mp4" }
+            { type: "image", src: "images/eventos/inter/inter6.jpg" },
+            { type: "image", src: "images/eventos/inter/inter.jpg" },
+            { type: "image", src: "images/eventos/inter/inter2.jpg" },
+            { type: "image", src: "images/eventos/inter/inter3.jpg" },
+            { type: "image", src: "images/eventos/inter/inter4.jpg" },
+            { type: "image", src: "images/eventos/inter/inter5.jpg" },
+            { type: "image", src: "images/eventos/inter/inter7.jpg" },
+            { type: "image", src: "images/eventos/inter/inter8.jpg" },
+            { type: "image", src: "images/eventos/inter/inter9.jpg" },
+            { type: "image", src: "images/eventos/inter/inter10.jpg" },
+            { type: "image", src: "images/eventos/inter/inter11.jpg" },
+            { type: "image", src: "images/eventos/inter/inter12.jpg" },
+            { type: "image", src: "images/eventos/inter/inter13.jpg" },
+            { type: "image", src: "images/eventos/inter/inter14.jpg" },
+            { type: "image", src: "images/eventos/inter/inter15.jpg" },
+            { type: "video", src: "videos/inter/video-inter1.mp4" }
         ]
     },
     "tipico": {
-        title: "Actividades Folclóricas",
+        title: "Conjunto Folclórico",
         date: "Octubre 2026",
         description: "🌟 ¡Así vibra el corazón de nuestra tradición!"+
         "El Conjunto Folclórico de la Escuela Octavio López Pascal es mucho más que un grupo de danza; es un proyecto administrativo que entrelaza movimiento, historia, música y comunidad. Aquí, cada zapateado, cada melodía y cada colorido traje cuenta la historia viva de nuestro país."+
@@ -151,8 +165,15 @@ const eventsData = {
         "Una muestra del talento, la dedicación y el orgullo de nuestros estudiantes, quienes honran nuestras raíces para mantener viva la llama de la identidad y construir un futuro conectado con la riqueza de nuestro pasado. ✨ ",
 
         gallery: [
-            { type: "image", src: "images/eventos/tipico.jpg" },
-            { type: "video", src: "videos/tipico.mp4" }
+            { type: "image", src: "images/eventos/tipico/tipico.jpg" },
+            { type: "image", src: "images/eventos/tipico/tipico2.jpg" },
+            { type: "image", src: "images/eventos/tipico/tipico3.jpg" },
+            { type: "image", src: "images/eventos/tipico/tipico4.jpg" },
+            { type: "image", src: "images/eventos/tipico/tipico5.jpg" },
+            { type: "image", src: "images/eventos/tipico/tipico6.jpg" },
+            { type: "video", src: "videos/tipico/video-tipico1.mp4" },
+            { type: "video", src: "videos/tipico/video-tipico2.mp4" },
+            { type: "video", src: "videos/tipico/video-tipico3.mp4" },
         ]
     },
     "deportivo": {
@@ -160,7 +181,49 @@ const eventsData = {
         date: "Octubre 2026",
         description: "Nuestros Programas Deportivos son un pilar fundamental en la formación integral de nuestros estudiantes.",
         gallery: [
-            { type: "image", src: "images/eventos/deportivo.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion3.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion1.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion2.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion4.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion5.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion6.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion7.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion8.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion9.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion10.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion11.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion12.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion13.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion14.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion15.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion16.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion17.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion18.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion19.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion20.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion21.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion22.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion23.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion24.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion25.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion26.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion27.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion28.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion29.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion30.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion31.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion32.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion33.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion34.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion35.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion36.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion37.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion38.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion39.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion42.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion40.jpg" },
+            { type: "image", src: "images/eventos/deportivo/natacion41.jpg" },
+
         ]        
     },
     "banda": {
@@ -205,7 +268,47 @@ const eventsData = {
             { type: "video", src: "videos/banda/video-banda8.mp4" },
         ]
     },
-};
+    "campesino":{
+        title: "Semana del Campesino",
+        date: "Octubre 2026",
+        description: "🌟 ¡Así celebramos nuestras raíces con orgullo y comunidad! "+
+        "La Semana del Campesino es uno de los eventos más emblemáticos y esperados en la Escuela Octavio López Pascal. Cada septiembre, nuestra comunidad se une para honrar las tradiciones, la identidad cultural y el espíritu festivo que nos define. " +
+        "Desde el emocionante escrutinio de latas en agosto donde estudiantes, docentes y familias eligen democráticamente a sus Reyes hasta los días llenos de juegos bufos, bailes tradicionales, coloridas caravanas y la coronación real, vivimos una fiesta que entrelaza alegría, folclor y aprendizaje vivencial. 👑🎪🚜 " +
+        "Una muestra del compromiso de nuestros estudiantes por preservar y revitalizar la herencia campesina, demostrando que la tradición no solo se recuerda, ¡se vive, se baila y se comparte con orgullo! 🌾💃🏻🕺✨ ",
+    gallery: [
+        { type: "image", src: "images/eventos/campesino/campesino1.jpg" },
+        { type: "image", src: "images/eventos/campesino/campesino2.jpg" },
+    ]
+    },
+
+    "macano": {
+        title: "Gira a Macano de Boquerón",
+        date: "Octubre 2026",
+        description: "🐄 ¡Así se aprende de la vida agrícola y la gestión sostenible!" + 
+        "Continuando con nuestro compromiso por una educación vivencial, nuestros estudiantes de 6º realizaron una enriquecedora visita a la Finca El Macano, perteneciente al Colegio Secundario del mismo nombre en Boquerón. Esta experiencia les permitió conocer de primera mano proyectos productivos y de manejo sostenible con diferentes animales. " +
+        "Durante el recorrido, los estudiantes observaron y aprendieron sobre la cría, el cuidado y la importancia de especies como bovinos, porcinos, aves y otros animales de granja. Fue una lección práctica en producción animal, sostenibilidad y emprendimiento agropecuario, que conectó los conocimientos teóricos con las realidades del campo y la autosuficiencia. 🐖🐓🌱🚜" +
+        "Esta visita refuerza nuestra visión de una formación integral, donde los estudiantes no solo adquieren conocimientos académicos, sino también un profundo respeto por el trabajo de la tierra, la responsabilidad en la producción de alimentos y las oportunidades que ofrece el sector agropecuario para el futuro. 💪📚🌾 "+
+        "Una muestra más de cómo en la Escuela Octavio López Pascal educamos para la vida, conectando a nuestros estudiantes con experiencias reales que inspiran, enseñan y transforman. ✨ ",
+        gallery: [
+            { type: "image", src: "images/eventos/giras/macano/macano1.jpg" },
+            { type: "image", src: "images/eventos/giras/macano/macano2.jpg" },
+            { type: "image", src: "images/eventos/giras/macano/macano3.jpg" },
+        ]
+    },
+    "velo": {
+        title: "Gira a Finca El Velo",
+        date: "Octubre 2026",
+        description: "🌿 ¡Así se expanden las aulas hacia la naturaleza y el conocimiento! Nuestras giras académicas son experiencias transformadoras donde el aprendizaje traspasa las paredes del salón para sumergirse en el mundo real. Un ejemplo brillante fue la visita de nuestros estudiantes de 5° y 6° grado a la Finca El Velo, un santuario natural que se convirtió en el laboratorio perfecto para un proyecto vivo de biodiversidad."+ 
+        "Esta salida de campo, diseñada desde la clase de Ciencias Naturales y enriquecida de forma interdisciplinaria con Español, Inglés y Educación Física, permitió a nuestros jóvenes científicos explorar ecosistemas, identificar especies y comprender la delicadeza y la importancia de la conservación. Fue una lección donde la biología, la ecología, la expresión escrita, el vocabulario científico y la actividad física se unieron en una sola aventura formativa. 🔍🐞🌳📝🏃🏻‍♀️🏃🏻‍♂️" +
+        "Una muestra del compromiso de la Escuela Octavio López Pascal con una educación integral, experiencial y conectada, formando no solo estudiantes, sino futuros guardianes de nuestro planeta, con mentes curiosas, habilidades múltiples y corazones conectados a la naturaleza. 🌎❤️✨" ,
+        gallery: [
+            { type: "image", src: "images/eventos/giras/velo/velo1.jpg" },
+            { type: "image", src: "images/eventos/giras/velo/velo2.jpg" },
+            { type: "image", src: "images/eventos/giras/velo/velo3.jpg" },
+        ]
+    },
+};  
+
 
 function initializeEventDetail() {
     if (!currentEventId) return;

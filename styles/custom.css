@@ -170,12 +170,13 @@ h1, h2{
     font-family: 'passion one', cursive;
 }
 
-a, button, .card, .hover-lift {
+button, .card, .hover-lift {
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform, box-shadow;
 }
 
-a:hover, button:hover, .hover-lift:hover {
+
+button:hover, .hover-lift:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 12px 25px rgba(0,0,0,0.1);
 }
