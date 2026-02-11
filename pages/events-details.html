@@ -52,8 +52,19 @@
       <h2 class="text-5xl text-white mb-12 text-center font-semibold">
         GALERÍA DE IMÁGENES Y VIDEOS
       </h2>
+      <div id="event-gallery" class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+      <div class="relative group cursor-pointer" onclick="toggleVideo(this)">
+        <video class="w-full h-72 object-cover rounded-2xl">
+          <source src="videos/evento1.mp4">
+        </video>
 
-     <div id="event-gallery" class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6"></div>
+        <!-- Botón play -->
+        <div class="play-btn absolute inset-0 flex items-center justify-center 
+                    bg-black/30 group-hover:bg-black/40 transition">
+          <i class="fas fa-play text-white text-5xl"></i>
+        </div>
+      </div>
+      </div>
     </div>
   </section>
 

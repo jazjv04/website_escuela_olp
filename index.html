@@ -44,20 +44,24 @@
     
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="styles/custom.css">
-
-    <!-- Configuración para GitHub Pages -->
-    <base href="https://jazjv04.github.io/website_escuela_olp/" />
   
   <!-- Rutas relativas: -->
-  <script>
-    // Detecta si estás en GitHub Pages o local
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    const repoName = 'website_escuela_olp'; // Cambia esto
-    
-    if (isGitHubPages && repoName) {
-      document.write('<base href="' + window.location.origin + '/' + repoName + '/" />');
-    }
-  </script>
+        <script>
+        // Detectar si estamos en local o GitHub Pages
+        const isLocal = window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1:5500';
+        const isGitHubPages = window.location.hostname.includes('github.io');
+        const repoName = 'website_escuela_olp';
+
+        if (isGitHubPages) {
+            // En GitHub Pages
+            document.write('<base href="' + window.location.origin + '/' + repoName + '/" />');
+        } else if (isLocal) {
+            // En local (Live Server)
+            document.write('<base href="/" />');
+        }
+        // Si no es ninguno, no se escribe base href
+        </script>
 </head>
 
 <body class="font-sans bg-white">

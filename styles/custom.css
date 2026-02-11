@@ -202,3 +202,11 @@ a:hover, button:hover, .hover-lift:hover {
   from { transform: scale(.92); opacity: 0; }
   to   { transform: scale(1); opacity: 1; }
 }
+
+.play-btn i {
+  transition: transform .2s ease;
+}
+
+.play-btn:hover i {
+  transform: scale(1.2);
+}

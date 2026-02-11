@@ -124,9 +124,9 @@ const eventsData = {
         "Con inmenso orgullo, la Escuela Octavio López Pascal fue distinguida en el 2024 con la Orden Manuel José Hurtado, el máximo reconocimiento que otorga el Ministerio de Educación de Panamá a la calidad y la excelencia escolar. Este prestigioso galardón es el fruto del compromiso inquebrantable de toda nuestra comunidad: del esfuerzo diario de nuestros estudiantes, de la dedicación innovadora de nuestros docentes, del apoyo fundamental de las familias y de una gestión centrada en la mejora continua. " +
         "La Orden Manuel José Hurtado valora nuestro alto rendimiento académico, nuestras prácticas pedagógicas innovadoras, la sana convivencia y la participación de todos los que hacemos posible el milagro de educar. No es solo un premio; es un reconocimiento a un modelo de escuela que funciona, que inspira y que transforma vidas. 📚✨ Este logro nos impulsa a seguir elevando nuestra misión, reafirmando que en la Escuela Octavio López Pascal construimos, día a día, las bases de un futuro lleno de oportunidades y excelencia para nuestras generaciones. 🚀 🇵🇦",
         gallery: [
-            { type: "image", src: "images/eventos/orden2.jpg" },
-            { type: "image", src: "images/eventos/orden.jpg" },
-            
+            { type: "image", src: "images/eventos/orden/orden2.jpg" },
+            { type: "image", src: "images/eventos/orden/orden3.jpg" },
+            { type: "image", src: "images/eventos/orden/orden.jpg" },
         ]
     },
 
@@ -145,7 +145,11 @@ const eventsData = {
     "tipico": {
         title: "Actividades Folclóricas",
         date: "Octubre 2026",
-        description: "Celebramos nuestra identidad nacional a través de actividades folclóricas con nuestros estudiantes.",
+        description: "🌟 ¡Así vibra el corazón de nuestra tradición!"+
+        "El Conjunto Folclórico de la Escuela Octavio López Pascal es mucho más que un grupo de danza; es un proyecto administrativo que entrelaza movimiento, historia, música y comunidad. Aquí, cada zapateado, cada melodía y cada colorido traje cuenta la historia viva de nuestro país."+
+        "Desde el ritmo vibrante hasta la expresión artística más profunda, nuestros estudiantes demuestran que la cultura no solo se estudia, sino que se siente, se baila y se lleva en el alma. 💃🏻🕺🏻🎶 "+
+        "Una muestra del talento, la dedicación y el orgullo de nuestros estudiantes, quienes honran nuestras raíces para mantener viva la llama de la identidad y construir un futuro conectado con la riqueza de nuestro pasado. ✨ ",
+
         gallery: [
             { type: "image", src: "images/eventos/tipico.jpg" },
             { type: "video", src: "videos/tipico.mp4" }
@@ -175,6 +179,30 @@ const eventsData = {
             { type: "image", src: "images/eventos/banda/banda5.jpg" },
             { type: "image", src: "images/eventos/banda/banda6.jpg" },
             { type: "image", src: "images/eventos/banda/banda7.jpg" },
+            { type: "image", src: "images/eventos/banda/banda8.jpg" },
+            { type: "image", src: "images/eventos/banda/banda9.jpg" },
+            { type: "image", src: "images/eventos/banda/banda10.jpg" },
+            { type: "image", src: "images/eventos/banda/banda11.jpg" },
+            { type: "image", src: "images/eventos/banda/banda12.jpg" },
+            { type: "image", src: "images/eventos/banda/banda13.jpg" },
+            { type: "image", src: "images/eventos/banda/banda14.jpg" },
+            { type: "image", src: "images/eventos/banda/banda15.jpg" },
+            { type: "image", src: "images/eventos/banda/banda16.jpg" },
+            { type: "image", src: "images/eventos/banda/banda17.jpg" },
+            { type: "image", src: "images/eventos/banda/banda18.jpg" },
+            { type: "image", src: "images/eventos/banda/banda19.jpg" },
+            { type: "image", src: "images/eventos/banda/banda20.jpg" },
+            { type: "image", src: "images/eventos/banda/banda21.jpg" },
+            { type: "image", src: "images/eventos/banda/banda22.jpg" },
+            { type: "image", src: "images/eventos/banda/banda23.jpg" },
+            { type: "video", src: "videos/banda/video-banda1.mp4"},
+            { type: "video", src: "videos/banda/video-banda2.mp4" },
+            { type: "video", src: "videos/banda/video-banda3.mp4" },
+            { type: "video", src: "videos/banda/video-banda4.mp4" },
+            { type: "video", src: "videos/banda/video-banda5.mp4" },
+            { type: "video", src: "videos/banda/video-banda6.mp4" },
+            { type: "video", src: "videos/banda/video-banda7.mp4" },
+            { type: "video", src: "videos/banda/video-banda8.mp4" },
         ]
     },
 };
@@ -201,28 +229,40 @@ function initializeEventDetail() {
     gallery.innerHTML = "";
 
     event.gallery.forEach(item => {
-            gallery.innerHTML += item.type === "image"
-            ? `
-            <div onclick="openLightbox('${item.src}', 'image')" 
-                class="break-inside-avoid cursor-zoom-in group">
-            <img src="${item.src}"
-                class="w-full rounded-xl shadow-lg
-                        transition group-hover:scale-[1.02]">
-            </div>`
-            : `
-            <div onclick="openLightbox('${item.src}', 'video')" 
-                class="break-inside-avoid cursor-pointer">
-            <video muted class="w-full rounded-xl shadow-lg">
-                <source src="${item.src}">
-            </video>
-            </div>`;
-            });
+    if (item.type === "image") {
+            gallery.innerHTML += `
+            <div onclick="openLightbox('${item.src}','image')"
+                class="group relative overflow-hidden rounded-2xl shadow-lg cursor-zoom-in">
+                <img src="${item.src}" 
+                    class="w-full object-cover 
+                            group-hover:scale-110 transition duration-700">
+            </div>
+            `;
+        }
 
-    // Set hero background
-    const heroBg = document.getElementById("event-hero-bg");
-    if (heroBg && event.gallery[0]) {
-    heroBg.style.backgroundImage = `url(${event.gallery[0].src})`;
-    }
+        if (item.type === "video") {
+            gallery.innerHTML += `
+            <div class="relative group cursor-pointer"
+                onclick="toggleVideo(this)">
+                <video class="w-full object-cover rounded-2xl">
+                <source src="${item.src}">
+                </video>
+
+                <div class="play-btn absolute inset-0 flex items-center justify-center 
+                            bg-black/30 group-hover:bg-black/40 transition">
+                <i class="fas fa-play text-white text-5xl"></i>
+                </div>
+            </div>
+            `;
+        }
+
+        });
+
+        // Set hero background
+        const heroBg = document.getElementById("event-hero-bg");
+        if (heroBg && event.gallery[0]) {
+        heroBg.style.backgroundImage = `url(${event.gallery[0].src})`;
+        }
 
 }
 
@@ -270,3 +310,30 @@ function goToEvent(index) {
 setInterval(() => {
   if (track) nextEvent();
 }, 6000);
+
+function toggleVideo(wrapper) {
+  const video = wrapper.querySelector("video");
+  const icon = wrapper.querySelector("i");
+
+  // Pausar todos los demás
+  document.querySelectorAll("#event-gallery video").forEach(v => {
+    if (v !== video) {
+      v.pause();
+      v.closest(".relative")?.querySelector("i")
+        ?.classList.replace("fa-pause","fa-play");
+    }
+  });
+
+  if (video.paused) {
+    video.play();
+    icon.classList.replace("fa-play","fa-pause");
+  } else {
+    video.pause();
+    icon.classList.replace("fa-pause","fa-play");
+  }
+
+  video.onended = () => {
+    icon.classList.replace("fa-pause","fa-play");
+  };
+}
+
