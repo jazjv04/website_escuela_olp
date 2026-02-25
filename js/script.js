@@ -6,7 +6,6 @@ function initializeComponents() {
     initializePageLoad();
     initializeEventDetail();
     initCarousel();
-
 }
 
 // Animación dramática al cargar la página
@@ -525,3 +524,23 @@ function toggleVideo(wrapper) {
   };
 }
 
+//heder dropdown
+function navigateTo(page, sectionId) {
+  loadPage(page);
+
+  // Espera a que cargue el contenido
+  setTimeout(() => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 300);
+}
+
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".relative")) {
+    document.querySelectorAll('.dropdown').forEach(d => {
+      d.classList.remove('show');
+    });
+  }
+});

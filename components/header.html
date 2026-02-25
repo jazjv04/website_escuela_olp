@@ -1,36 +1,74 @@
-<header class="bg-escuela-azul-oscuro text-white sticky top-0 z-50 shadow-lg">
-    <nav class="container mx-auto px-4 py-4">
-        <div class="flex justify-between items-center">
-            <!-- Logo -->
-            <div onclick="loadPage('homePage.html')" class="flex items-center space-x-3">
-                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                    <img src="images/Logo_OLP.png" alt="Logo OCTAVIO LOPÉZ PASCAL" class="text-escuela-azul-oscuro font-bold text-xl">
-                </div>
-                <span class="text-xl font-bold">ESCUELA OCTAVIO LOPÉZ PASCAL</span>
-            </div>
-            
-            <!-- Menú Desktop -->
-            <div class="hidden md:flex space-x-8 ">
-                <a  href="#" onclick="loadPage('homePage.html')" class="hover:text-gray-400 transition">Inicio</a>
-                <a href="#" onclick="loadPage('events.html')" class="hover:text-gray-400 transition">Eventos</a>
-                <a href="#" onclick="loadPage('aboutUs.html')" class="hover:text-gray-400 transition">Sobre Nosotros</a>
-                <a href="#contacto" class="hover:text-escuela-electrico transition font-medium">Contáctenos</a>
-            </div>
-            
-            <!-- Botón Menú Móvil -->
-            <button id="menuBtn" class="md:hidden text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
+<header class="bg-escuela-azul-oscuro text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+
+      <!-- Logo -->
+      <div onclick="loadPage('homePage.html')" class="flex items-center space-x-3 cursor-pointer">
+        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+          <img src="images/Logo_OLP.png">
         </div>
-        
-        <!-- Menú Móvil -->
-        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
-            <div class="flex flex-row justify-center items-center space-x-6 text-sm">
-                <a href="#" onclick="loadPage('homePage.html')">Inicio</a>
-                <a href="#" onclick="loadPage('events.html')">Eventos</a>
-                <a href="#" onclick="loadPage('aboutUs.html')">Sobre Nosotros</a>
-                <a href="#" onclick="scrollToSection('contacto')">Contáctenos</a>
-            </div>
+        <span class="text-xl font-bold">ESCUELA OCTAVIO LOPÉZ PASCAL</span>
+      </div>
+
+      <!-- Menú Desktop -->
+      <div class="hidden md:flex space-x-10">
+
+        <div class="dropdown">
+          <button class="hover:text-gray-400 transition">Inicio</button>
+          <div class="dropdown-content">
+            <a onclick="navigateTo('homePage.html','inicio')">Inicio</a>
+            <a onclick="navigateTo('homePage.html','pilares')">Misión, Visión y Valores</a>
+            <a onclick="navigateTo('homePage.html','reconocimientos')">Reconocimientos</a>
+          </div>
         </div>
-    </nav>
+
+        <div class="dropdown">
+          <button class="hover:text-gray-400 transition">Eventos</button>
+          <div class="dropdown-content">
+            <a onclick="navigateTo('events.html','premios')">Premios</a>
+            <a onclick="navigateTo('events.html','eventos')">Eventos Destacados</a>
+            <a onclick="navigateTo('events.html','giras')">Giras Académicas</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="hover:text-gray-400 transition">Nuestro Equipo</button>
+          <div class="dropdown-content">
+            <a onclick="navigateTo('ourTeam.html','administrativos')">Administrativos</a>
+            <a onclick="navigateTo('ourTeam.html','trabajadoras')">Trabajadoras Manuales</a>
+            <a onclick="navigateTo('ourTeam.html','docentesGrado')">Docentes de Grado</a>
+            <a onclick="navigateTo('ourTeam.html','docentesPreescolar')">Docentes de Preescolar</a>
+            <a onclick="navigateTo('ourTeam.html','docentesEspeciales')">Docentes Especiales</a>
+            <a onclick="navigateTo('ourTeam.html','docentesIngles')">Docentes de Inglés</a>
+          </div>
+        </div>
+
+        <a onclick="loadPage('contact.html')" class="hover:text-gray-400 transition cursor-pointer">
+          Contáctenos
+        </a>
+
+      </div>
+
+      <!-- Botón móvil -->
+      <button id="menuBtn" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+
+    <!-- Menú móvil -->
+    <div id="mobileMenu" class="hidden md:hidden mt-4 bg-escuela-azul-oscuro rounded-lg p-4 space-y-3">
+
+      <a onclick="navigateTo('homePage.html','inicio')" class="block hover:font-bold">Inicio</a>
+      <a onclick="navigateTo('homePage.html','pilares')" class="block hover:font-bold">Misión, Visión y Valores</a>
+      <a onclick="navigateTo('homePage.html','reconocimientos')" class="block hover:font-bold">Reconocimientos</a>
+
+      <a onclick="navigateTo('events.html')" class="block hover:font-bold">Eventos</a>
+      <a onclick="navigateTo('ourTeam.html')" class="block hover:font-bold">Nuestro Equipo</a>
+
+      <a onclick="loadPage('contact.html')" class="block hover:font-bold">Contáctenos</a>
+
+    </div>
+
+  </nav>
 </header>
